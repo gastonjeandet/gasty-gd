@@ -24,7 +24,7 @@ const proyectos = [
     id: 'bonvivir',
     titulo: 'Bonvivir',
     categoria: 'Streaming',
-    periodo: '2023–2025',
+    periodo: '2025',
     descripcion: 'Streaming mensual del Club de Vinos de La Nación. Producción y dirección técnica de emisiones en vivo.',
     link: 'https://www.youtube.com/@bonvivir_/streams',
     linkLabel: 'Ver canal',
@@ -109,33 +109,46 @@ const proyectos = [
     tags: ['Facilitation', 'Liderazgo'],
   },
   {
-    id: 'alguien',
-    titulo: 'AlguiEN',
+    id: 'las-rivero',
+    titulo: 'Las Rivero',
     categoria: 'Cortometraje',
-    periodo: '2018',
-    descripcion: 'Cortometraje del proyecto Historia Colectiva en Primera Persona (Rayo Blanco). Dirección de fotografía y actuación.',
-    link: 'https://www.youtube.com/watch?v=3_B0pfvcghs',
+    periodo: '2021',
+    descripcion: 'Cortometraje del proyecto Historia Colectiva en Primera Persona. Actuación.',
+    link: 'https://www.youtube.com/watch?v=NWP-ZBzjX1c',
     linkLabel: 'Ver cortometraje',
-    galeria: [
-      '/imagenes/cortos-alguien/alguien-fotograma-03.png',
-      '/imagenes/cortos-alguien/alguien-poster-chico.jpg',
-      '/imagenes/cortos-alguien/alguien-fotograma-01.png',
-      '/imagenes/cortos-alguien/alguien-fotograma-02.png',
-    ],
-    videoId: '3_B0pfvcghs',
-    tags: ['Dir. Fotografía', 'Rayo Blanco'],
+    galeria: ['/imagenes/cortos-las-rivero/las-rivero.png'],
+    videoId: 'NWP-ZBzjX1c',
+    tags: ['Cortometraje', 'Historia Colectiva'],
   },
   {
     id: 'tia-antonia',
     titulo: 'Tía Antonia puede volar',
     categoria: 'Cortometraje',
     periodo: '2020',
-    descripcion: 'Cortometraje del proyecto Historia Colectiva en Primera Persona (Rayo Blanco).',
+    descripcion: 'Cortometraje del proyecto Historia Colectiva en Primera Persona.',
     link: 'https://www.youtube.com/watch?v=kgYILggk_Z8',
     linkLabel: 'Ver cortometraje',
     galeria: ['/imagenes/cortos-tia-antonia/tia-antonia-puede-volar.jpg'],
     videoId: 'kgYILggk_Z8',
-    tags: ['Cortometraje', 'Rayo Blanco'],
+    tags: ['Cortometraje', 'Historia Colectiva'],
+  },
+  {
+    id: 'teatro',
+    titulo: 'Teatro',
+    categoria: 'Teatro',
+    periodo: '2012–presente',
+    descripcion: 'Un recorrido por distintos formatos: del teatro comunitario de Los Pompapetriyasos (Parque Patricios) al teatro comercial y musical de gran escala como "Israel, el Musical", pasando por obras independientes. El protagonista puede ser el coro.',
+    link: null,
+    linkLabel: null,
+    galeria: [
+      '/imagenes/Teatro/IMG_20181009_135409_305.jpg',
+      '/imagenes/Teatro/FB_IMG_1538005164251.jpg',
+      '/imagenes/Teatro/IMG_20190502_224823_910.jpg',
+      '/imagenes/Teatro/IMG_20190430_192022_963.jpg',
+      '/imagenes/Teatro/IMG_20190502_224823_908.jpg',
+      '/imagenes/Teatro/IMG_20190502_224823_909.jpg',
+    ],
+    tags: ['Actuación', 'Comunitario · Musical'],
   },
   {
     id: 'charla-gamificacion',
@@ -183,6 +196,7 @@ const categoriaColores: Record<string, string> = {
   'Gamificación': '#c87dff',
   'Cortometraje': '#ffcc00',
   'Charlas': '#ff4f8b',
+  'Teatro': '#ff7eb6',
 };
 ---
 <Layout>
@@ -280,13 +294,13 @@ const categoriaColores: Record<string, string> = {
             icono: '🎲',
             titulo: 'Gamificación y Juegos',
             descripcion: 'Diseño de juegos de mesa, gamificación de procesos organizacionales, facilitación de talleres de liderazgo. Capacitación en IA y herramientas digitales.',
-            ejemplos: ['WellMess (juego de cartas)', 'EFES Management Group', 'Elementales (en dev)', 'Hackatones IA'],
+            ejemplos: ['WellMess (juego de cartas)', 'EFES Management Group', 'Charlas y workshops', 'Capacitación en IA'],
           },
           {
             icono: '🎬',
             titulo: 'Audiovisual y Teatro',
-            descripcion: 'Dirección de fotografía en cine, actuación, producción de cortometrajes. Teatro comunitario de largo aliento con Los Pompapetriyasos.',
-            ejemplos: ['AlguiEN', 'Tía Antonia puede volar', 'Las Rivero', 'Los Pompapetriyasos'],
+            descripcion: 'Dirección de fotografía en cine, actuación y producción de cortometrajes. Teatro: del comunitario al comercial y musical.',
+            ejemplos: ['Historia Colectiva en Primera Persona', 'Las Rivero', 'Tía Antonia puede volar', 'Teatro'],
           },
         ].map((area) => (
           <div class="p-8 rounded-sm" style="background: var(--color-surface-2); border: 1px solid var(--color-border);">
@@ -465,6 +479,7 @@ const categoriaColores: Record<string, string> = {
       Gamificación: '#c87dff',
       Cortometraje: '#ffcc00',
       Charlas: '#ff4f8b',
+      Teatro: '#ff7eb6',
     };
     const color = categoriaColores[data.categoria] || '#888';
 
