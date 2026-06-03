@@ -1,0 +1,329 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const secciones = [
+  {
+    area: '📡 Streaming',
+    proyectos: [
+      {
+        titulo: 'Ohlalá! (La Nación)',
+        periodo: '2023–2025',
+        rol: 'Director de Streaming',
+        descripcion: 'Programa semanal de La Nación. Dirección técnica y artística de emisiones en vivo. Setup multicámara, coordinación de escenografía, dirección de realizadores, coordinación con el equipo periodístico. Más de 100 emisiones en vivo.',
+        links: [{ label: 'Canal en YouTube', url: 'https://www.youtube.com/@somosohlala/streams' }],
+        galeria: [
+          '/imagenes/streaming-ohlala/IMG_7938.JPG',
+          '/imagenes/streaming-ohlala/IMG_9233.JPG',
+          '/imagenes/streaming-ohlala/IMG_1073.JPG',
+          '/imagenes/streaming-ohlala/IMG_0084-1.JPG',
+          '/imagenes/streaming-ohlala/IMG_5078.JPG',
+          '/imagenes/streaming-ohlala/IMG_2350.JPG',
+        ],
+      },
+      {
+        titulo: 'Bonvivir (Club de Vinos La Nación)',
+        periodo: '2023–2025',
+        rol: 'Director de Streaming',
+        descripcion: 'Programa mensual del Club de Vinos de La Nación. Producción y dirección de streamings temáticos con sumilleres, periodistas y referentes del mundo del vino.',
+        links: [{ label: 'Canal en YouTube', url: 'https://www.youtube.com/@bonvivir_/streams' }],
+        galeria: [
+          '/imagenes/streaming-bonvivir/bonvivir-1.png',
+          '/imagenes/streaming-bonvivir/bonvivir-2.png',
+        ],
+      },
+      {
+        titulo: 'Rolling Stone México',
+        periodo: '2025',
+        rol: 'Director de Streaming',
+        descripcion: 'Streamings para el canal de Rolling Stone México. Cobertura de lanzamientos, entrevistas y eventos musicales en vivo, como el ciclo Future of Music.',
+        links: [{ label: 'Canal en YouTube', url: 'https://www.youtube.com/c/RollingStoneMéxico/streams' }],
+        galeria: ['/imagenes/rollingstone/rolling-stone-fom.png'],
+      },
+    ],
+  },
+  {
+    area: '🎪 Eventos masivos',
+    proyectos: [
+      {
+        titulo: 'Argentina Game Show (AGS)',
+        periodo: '2025',
+        rol: 'Director de Streaming',
+        descripcion: 'Cobertura del evento gamer más grande de Argentina. Múltiples escenarios en simultáneo, coordinación de equipos técnicos, producción de alta demanda en tiempo real.',
+        links: [],
+        galeria: [
+          '/imagenes/eventos-ags/IMG_4774.JPG',
+          '/imagenes/eventos-ags/IMG_4761.JPG',
+          '/imagenes/eventos-ags/IMG_3357.JPG',
+          '/imagenes/eventos-ags/IMG_4758.JPG',
+          '/imagenes/eventos-ags/IMG_4762.JPG',
+          '/imagenes/eventos-ags/ags-2025-10-02.jpg',
+          '/imagenes/eventos-ags/ags-2025-10-04.jpg',
+        ],
+      },
+      {
+        titulo: 'Comicón Argentina',
+        periodo: '2024',
+        rol: 'Director de Streaming',
+        descripcion: 'Streaming del evento de cultura pop y entretenimiento más importante del país.',
+        links: [],
+        galeria: [
+          '/imagenes/eventos-comicon/IMG_7208.JPG',
+          '/imagenes/eventos-comicon/IMG_7203.JPG',
+        ],
+      },
+      {
+        titulo: 'Luna Park NUM',
+        periodo: '2024',
+        rol: 'Director de Streaming',
+        descripcion: 'Streaming en vivo desde el Luna Park para el evento NUM. Producción técnica en venue de gran escala con audiencia masiva.',
+        links: [],
+        galeria: [
+          '/imagenes/eventos-luna-park/IMG_4960.JPG',
+          '/imagenes/eventos-luna-park/IMG_4962.JPG',
+          '/imagenes/eventos-luna-park/IMG_4917.JPG',
+          '/imagenes/eventos-luna-park/IMG_4920.JPG',
+          '/imagenes/eventos-luna-park/IMG_4912.JPG',
+          '/imagenes/eventos-luna-park/IMG_4915.JPG',
+        ],
+      },
+      {
+        titulo: 'IEFA LATAM Forum',
+        periodo: '2024',
+        rol: 'Director de Streaming',
+        descripcion: 'Cobertura de streaming del foro de economía y finanzas más importante de Latinoamérica.',
+        links: [],
+        galeria: [
+          '/imagenes/eventos-iefa/IMG_4639.JPG',
+          '/imagenes/eventos-iefa/IMG_4640.JPG',
+        ],
+      },
+      {
+        titulo: 'Pedidos Ya',
+        periodo: '2024',
+        rol: 'Director de Streaming',
+        descripcion: 'Producción de streaming para evento corporativo de Pedidos Ya.',
+        links: [],
+        galeria: ['/imagenes/eventos-pedidos-ya/IMG_6646.JPG'],
+      },
+    ],
+  },
+  {
+    area: '🎲 Gamificación y Juegos',
+    proyectos: [
+      {
+        titulo: 'WellMess',
+        periodo: '2024',
+        rol: 'Diseñador de Juego',
+        descripcion: 'Juego de cartas de hábitos saludables diseñado para la revista Ohlalá!. 50 cartas con mecánicas de gameplay originales. Distribución masiva junto con la edición impresa de la revista.',
+        links: [],
+        galeria: [
+          '/imagenes/wellmess/IMG_0058.JPG',
+          '/imagenes/wellmess/wellmess.png',
+          '/imagenes/wellmess/IMG_0079.JPG',
+          '/imagenes/wellmess/IMG_0083.JPG',
+          '/imagenes/wellmess/IMG_0078.JPG',
+          '/imagenes/wellmess/IMG_2753.JPG',
+        ],
+      },
+      {
+        titulo: 'EFES Management Group',
+        periodo: '2023–presente',
+        rol: 'Facilitador · Diseñador de Experiencias',
+        descripcion: 'Programa de liderazgo y gamificación para equipos de cadenas gastronómicas. 4 grupos simultáneos. Diseño de dinámicas lúdicas aplicadas al desarrollo de habilidades de gestión. Marcas: Johnny B. Good, Le Pain Quotidien, Tostado, El Club de la Milanesa, Juan Bautista, Parrilla Gaúcha, Pizzería Popular.',
+        links: [],
+        galeria: [
+          '/imagenes/efes/efes-taller-2025-05-06.jpg',
+          '/imagenes/efes/efes-taller-2025-05-05.jpg',
+          '/imagenes/efes/efes-taller-2026-09.jpg',
+          '/imagenes/efes/efes-taller-2025-05-02.jpg',
+          '/imagenes/efes/efes-taller-2025-05-04.jpg',
+          '/imagenes/efes/efes-taller-2026-02.jpg',
+          '/imagenes/efes/efes-taller-2026-10.jpg',
+        ],
+      },
+    ],
+  },
+  {
+    area: '🎬 Audiovisual y Teatro',
+    proyectos: [
+      {
+        titulo: 'AlguiEN',
+        periodo: '2018',
+        rol: 'Dirección de Fotografía · Actuación',
+        descripcion: 'Cortometraje del proyecto Historia Colectiva en Primera Persona (productora Rayo Blanco). Dirección de fotografía e interpretación.',
+        links: [{ label: 'Ver en YouTube', url: 'https://www.youtube.com/watch?v=3_B0pfvcghs' }],
+        galeria: [
+          '/imagenes/cortos-alguien/alguien-fotograma-03.png',
+          '/imagenes/cortos-alguien/alguien-poster-chico.jpg',
+          '/imagenes/cortos-alguien/alguien-fotograma-01.png',
+          '/imagenes/cortos-alguien/alguien-fotograma-02.png',
+        ],
+      },
+      {
+        titulo: 'Tía Antonia puede volar',
+        periodo: '2020',
+        rol: 'Actuación',
+        descripcion: 'Cortometraje del proyecto Historia Colectiva en Primera Persona (Rayo Blanco).',
+        links: [{ label: 'Ver en YouTube', url: 'https://www.youtube.com/watch?v=kgYILggk_Z8' }],
+        galeria: ['/imagenes/cortos-tia-antonia/tia-antonia-puede-volar.jpg'],
+      },
+      {
+        titulo: 'Las Rivero',
+        periodo: '2021',
+        rol: 'Actuación',
+        descripcion: 'Cortometraje del proyecto Historia Colectiva en Primera Persona (Rayo Blanco, rayoblanco.com).',
+        links: [{ label: 'Ver en YouTube', url: 'https://www.youtube.com/watch?v=NWP-ZBzjX1c' }],
+        galeria: ['/imagenes/cortos-las-rivero/las-rivero.png'],
+      },
+      {
+        titulo: 'Teatro',
+        periodo: '2012–presente',
+        rol: 'Actor · Cantante · Intérprete',
+        descripcion: 'Un recorrido por distintos formatos teatrales: desde el teatro comunitario de Los Pompapetriyasos (Parque Patricios, +10 años, donde el protagonista es el coro) hasta el teatro comercial y musical de gran escala como "Israel, el Musical", pasando por diversas obras independientes. Distintos lenguajes, una misma búsqueda: que la gente se quede mirando.',
+        links: [],
+        galeria: [
+          '/imagenes/Teatro/IMG_20181009_135409_305.jpg',
+          '/imagenes/Teatro/FB_IMG_1538005164251.jpg',
+          '/imagenes/Teatro/IMG_20190502_224823_910.jpg',
+          '/imagenes/Teatro/IMG_20190430_192022_963.jpg',
+          '/imagenes/Teatro/IMG_20190502_224823_908.jpg',
+          '/imagenes/Teatro/IMG_20190502_224823_909.jpg',
+          '/imagenes/Teatro/FB_IMG_1496958148711.jpg',
+          '/imagenes/Teatro/FB_IMG_1538018313215.jpg',
+          '/imagenes/Teatro/FB_IMG_1538018496100.jpg',
+          '/imagenes/Teatro/FB_IMG_1540381515482.jpg',
+          '/imagenes/Teatro/FB_IMG_1542298928210.jpg',
+          '/imagenes/Teatro/IMG-20200623-WA0015.jpg',
+          '/imagenes/Teatro/IMG_20180530_130435_947.jpg',
+          '/imagenes/Teatro/IMG_20180530_132128_468.jpg',
+          '/imagenes/Teatro/IMG_20180911_011440_826.jpg',
+          '/imagenes/Teatro/IMG_20180911_114939_942.jpg',
+          '/imagenes/Teatro/IMG_20181019_081251_626.jpg',
+          '/imagenes/Teatro/IMG_20181205_232511_638.jpg',
+        ],
+      },
+      {
+        titulo: 'Charla: Gamificación',
+        periodo: '2025',
+        rol: 'Expositor',
+        descripcion: 'Conferencia sobre gamificación aplicada a organizaciones y liderazgo.',
+        links: [{ label: 'Ver en YouTube', url: 'https://www.youtube.com/watch?v=knlE5kA9kAg' }],
+        galeria: ['/imagenes/charlas/charla-gamificacion.png'],
+      },
+      {
+        titulo: 'Cómo crear tu propio juego',
+        periodo: '2024',
+        rol: 'Expositor',
+        descripcion: 'Workshop sobre diseño de juegos de mesa y mecánicas lúdicas.',
+        links: [{ label: 'Ver en YouTube', url: 'https://www.youtube.com/watch?v=WYMzLM9NFRE' }],
+        galeria: ['/imagenes/charlas/charla-juego.png'],
+      },
+    ],
+  },
+];
+---
+<Layout
+  title="Proyectos — Gasty Jeandet"
+  description="Portfolio completo de Gastón Jeandet: streaming, gamificación, juegos, audiovisual y teatro."
+>
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4" style="background: rgba(10,10,10,0.97); border-bottom: 1px solid var(--color-border);">
+    <a href="/" class="font-bold text-sm tracking-widest transition-colors hover:opacity-80" style="font-family:'Space Grotesk',sans-serif; color: var(--color-lime);">← GASTY.GD</a>
+    <a href="/cv-gasty-jeandet.pdf" download class="text-sm font-bold transition-colors hover:opacity-80" style="font-family:'Space Grotesk',sans-serif; color: var(--color-lime);">↓ Descargar CV</a>
+  </nav>
+
+  <main class="pt-24 pb-24 px-6 max-w-5xl mx-auto">
+    <p class="section-label mb-4">Portfolio completo</p>
+    <h1 class="text-5xl sm:text-7xl mb-4" style="font-family:'Space Grotesk',sans-serif;">Proyectos</h1>
+    <p class="text-lg mb-20" style="color: var(--color-muted);">Todo lo que hice, en detalle.</p>
+
+    {secciones.map((seccion) => (
+      <section class="mb-24">
+        <h2 class="text-2xl mb-10 pb-4" style="font-family:'Space Grotesk',sans-serif; border-bottom: 1px solid var(--color-border);">
+          {seccion.area}
+        </h2>
+        <div class="space-y-12">
+          {seccion.proyectos.map((p, pi) => (
+            <div class="grid md:grid-cols-3 gap-8 items-start">
+              {p.galeria && p.galeria.length ? (
+                <div class="md:col-span-1">
+                  <div
+                    class="relative"
+                    data-carrusel={JSON.stringify(p.galeria)}
+                    style="border-radius: 2px; overflow: hidden; background: #000;"
+                  >
+                    <div style="aspect-ratio: 4/3; background:#000;">
+                      <img
+                        class="car-img w-full h-full"
+                        src={p.galeria[0]}
+                        alt={p.titulo}
+                        style="object-fit: contain; background:#000;"
+                        loading="lazy"
+                      />
+                    </div>
+                    {p.galeria.length > 1 && (
+                      <>
+                        <button type="button" data-dir="-1" aria-label="Anterior" style="position:absolute;left:6px;top:50%;transform:translateY(-50%);width:34px;height:34px;border:0;border-radius:50%;background:rgba(0,0,0,0.6);color:#fff;font-size:1.2rem;cursor:pointer;backdrop-filter:blur(4px);">‹</button>
+                        <button type="button" data-dir="1" aria-label="Siguiente" style="position:absolute;right:6px;top:50%;transform:translateY(-50%);width:34px;height:34px;border:0;border-radius:50%;background:rgba(0,0,0,0.6);color:#fff;font-size:1.2rem;cursor:pointer;backdrop-filter:blur(4px);">›</button>
+                        <div style="position:absolute;top:6px;right:8px;font-size:0.65rem;font-weight:700;padding:2px 7px;background:rgba(0,0,0,0.6);color:#fff;border-radius:99px;backdrop-filter:blur(4px);"><span class="car-num">1</span>/{p.galeria.length}</div>
+                      </>
+                    )}
+                  </div>
+                </div>
+              ) : (
+                <div class="md:col-span-1 flex items-center justify-center text-5xl" style="aspect-ratio:4/3; background: var(--color-surface); border-radius: 2px;">
+                  🎬
+                </div>
+              )}
+              <div class="md:col-span-2">
+                <p class="text-xs mb-2" style="color: var(--color-lime); font-family:'Space Grotesk',sans-serif; letter-spacing:0.1em;">{p.periodo}</p>
+                <h3 class="text-2xl mb-1" style="font-family:'Space Grotesk',sans-serif;">{p.titulo}</h3>
+                <p class="text-sm mb-4" style="color: var(--color-muted);">{p.rol}</p>
+                <p class="text-sm mb-6" style="color: #bbb; line-height: 1.7;">{p.descripcion}</p>
+                {p.links.length > 0 && (
+                  <div class="flex flex-wrap gap-3">
+                    {p.links.map((link) => (
+                      <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener"
+                        class="inline-flex items-center gap-2 text-xs font-bold px-4 py-2 transition-colors hover:opacity-80"
+                        style="background: var(--color-lime); color: #000; font-family:'Space Grotesk',sans-serif; border-radius: 2px;"
+                      >
+                        {link.label} ↗
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
+  </main>
+
+  <footer class="py-8 px-6 text-center text-xs" style="color: var(--color-muted); border-top: 1px solid var(--color-border);">
+    <a href="/" class="hover:text-white transition-colors">← Volver al inicio</a>
+    <span class="mx-4" style="color: var(--color-border);">|</span>
+    <span>© {new Date().getFullYear()} Gastón Jeandet</span>
+  </footer>
+</Layout>
+
+<script is:inline>
+  document.querySelectorAll('[data-carrusel]').forEach((el) => {
+    const imgs = JSON.parse(el.dataset.carrusel);
+    if (imgs.length < 2) return;
+    let idx = 0;
+    const imgEl = el.querySelector('.car-img');
+    const numEl = el.querySelector('.car-num');
+    const ir = (delta) => {
+      idx = (idx + delta + imgs.length) % imgs.length;
+      imgEl.src = imgs[idx];
+      if (numEl) numEl.textContent = (idx + 1);
+    };
+    el.querySelectorAll('[data-dir]').forEach((btn) => {
+      btn.addEventListener('click', () => ir(Number(btn.dataset.dir)));
+    });
+  });
+</script>

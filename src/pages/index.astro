@@ -1,0 +1,593 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const proyectos = [
+  {
+    id: 'ohlala',
+    titulo: 'Ohlalá!',
+    categoria: 'Streaming',
+    periodo: '2023–2025',
+    descripcion: 'Dirección de streaming del programa semanal de La Nación. Setup multicámara, dirección en vivo, coordinación técnica y artística.',
+    link: 'https://www.youtube.com/@somosohlala/streams',
+    linkLabel: 'Ver canal',
+    galeria: [
+      '/imagenes/streaming-ohlala/IMG_7938.JPG',
+      '/imagenes/streaming-ohlala/IMG_9233.JPG',
+      '/imagenes/streaming-ohlala/IMG_1073.JPG',
+      '/imagenes/streaming-ohlala/IMG_0084-1.JPG',
+      '/imagenes/streaming-ohlala/IMG_5078.JPG',
+      '/imagenes/streaming-ohlala/IMG_2350.JPG',
+    ],
+    tags: ['La Nación', 'Semanal'],
+  },
+  {
+    id: 'bonvivir',
+    titulo: 'Bonvivir',
+    categoria: 'Streaming',
+    periodo: '2023–2025',
+    descripcion: 'Streaming mensual del Club de Vinos de La Nación. Producción y dirección técnica de emisiones en vivo.',
+    link: 'https://www.youtube.com/@bonvivir_/streams',
+    linkLabel: 'Ver canal',
+    galeria: [
+      '/imagenes/streaming-bonvivir/bonvivir-1.png',
+      '/imagenes/streaming-bonvivir/bonvivir-2.png',
+    ],
+    tags: ['Club de Vinos', 'Mensual'],
+  },
+  {
+    id: 'ags',
+    titulo: 'Argentina Game Show',
+    categoria: 'Eventos',
+    periodo: '2025',
+    descripcion: 'Cobertura de streaming del evento gamer más grande de Argentina. Múltiples escenarios en simultáneo, producción de alta demanda.',
+    link: null,
+    linkLabel: null,
+    galeria: [
+      '/imagenes/eventos-ags/IMG_4774.JPG',
+      '/imagenes/eventos-ags/IMG_4761.JPG',
+      '/imagenes/eventos-ags/IMG_3357.JPG',
+      '/imagenes/eventos-ags/IMG_4758.JPG',
+      '/imagenes/eventos-ags/IMG_4762.JPG',
+      '/imagenes/eventos-ags/ags-2025-10-02.jpg',
+      '/imagenes/eventos-ags/ags-2025-10-04.jpg',
+    ],
+    tags: ['Evento masivo', 'Gaming'],
+  },
+  {
+    id: 'luna-park',
+    titulo: 'Luna Park NUM',
+    categoria: 'Eventos',
+    periodo: '2024',
+    descripcion: 'Streaming en vivo desde el Luna Park. Producción técnica y dirección para evento de gran escala con audiencia masiva.',
+    link: null,
+    linkLabel: null,
+    galeria: [
+      '/imagenes/eventos-luna-park/IMG_4960.JPG',
+      '/imagenes/eventos-luna-park/IMG_4962.JPG',
+      '/imagenes/eventos-luna-park/IMG_4917.JPG',
+      '/imagenes/eventos-luna-park/IMG_4920.JPG',
+      '/imagenes/eventos-luna-park/IMG_4912.JPG',
+      '/imagenes/eventos-luna-park/IMG_4915.JPG',
+    ],
+    tags: ['Evento masivo', 'Streaming'],
+  },
+  {
+    id: 'wellmess',
+    titulo: 'WellMess',
+    categoria: 'Juegos',
+    periodo: '2024',
+    descripcion: 'Diseño de juego de cartas de hábitos saludables para Ohlalá!. 50 cartas con distribución masiva junto con la revista impresa.',
+    link: null,
+    linkLabel: null,
+    galeria: [
+      '/imagenes/wellmess/IMG_0058.JPG',
+      '/imagenes/wellmess/wellmess.png',
+      '/imagenes/wellmess/IMG_0079.JPG',
+      '/imagenes/wellmess/IMG_0083.JPG',
+      '/imagenes/wellmess/IMG_0078.JPG',
+      '/imagenes/wellmess/IMG_2753.JPG',
+    ],
+    tags: ['Game design', 'Ohlalá'],
+  },
+  {
+    id: 'efes',
+    titulo: 'EFES Management',
+    categoria: 'Gamificación',
+    periodo: '2023–presente',
+    descripcion: 'Programa de liderazgo y gamificación para cadenas gastronómicas. 4 grupos simultáneos. Marcas: Johnny B. Good, Le Pain Quotidien, Tostado, El Club de la Milanesa.',
+    link: null,
+    linkLabel: null,
+    galeria: [
+      '/imagenes/efes/efes-taller-2025-05-06.jpg',
+      '/imagenes/efes/efes-taller-2025-05-05.jpg',
+      '/imagenes/efes/efes-taller-2026-09.jpg',
+      '/imagenes/efes/efes-taller-2025-05-02.jpg',
+      '/imagenes/efes/efes-taller-2025-05-04.jpg',
+      '/imagenes/efes/efes-taller-2026-02.jpg',
+      '/imagenes/efes/efes-taller-2026-10.jpg',
+    ],
+    tags: ['Facilitation', 'Liderazgo'],
+  },
+  {
+    id: 'alguien',
+    titulo: 'AlguiEN',
+    categoria: 'Cortometraje',
+    periodo: '2018',
+    descripcion: 'Cortometraje del proyecto Historia Colectiva en Primera Persona (Rayo Blanco). Dirección de fotografía y actuación.',
+    link: 'https://www.youtube.com/watch?v=3_B0pfvcghs',
+    linkLabel: 'Ver cortometraje',
+    galeria: [
+      '/imagenes/cortos-alguien/alguien-fotograma-03.png',
+      '/imagenes/cortos-alguien/alguien-poster-chico.jpg',
+      '/imagenes/cortos-alguien/alguien-fotograma-01.png',
+      '/imagenes/cortos-alguien/alguien-fotograma-02.png',
+    ],
+    videoId: '3_B0pfvcghs',
+    tags: ['Dir. Fotografía', 'Rayo Blanco'],
+  },
+  {
+    id: 'tia-antonia',
+    titulo: 'Tía Antonia puede volar',
+    categoria: 'Cortometraje',
+    periodo: '2020',
+    descripcion: 'Cortometraje del proyecto Historia Colectiva en Primera Persona (Rayo Blanco).',
+    link: 'https://www.youtube.com/watch?v=kgYILggk_Z8',
+    linkLabel: 'Ver cortometraje',
+    galeria: ['/imagenes/cortos-tia-antonia/tia-antonia-puede-volar.jpg'],
+    videoId: 'kgYILggk_Z8',
+    tags: ['Cortometraje', 'Rayo Blanco'],
+  },
+  {
+    id: 'charla-gamificacion',
+    titulo: 'Charla: Gamificación',
+    categoria: 'Charlas',
+    periodo: '2025',
+    descripcion: 'Conferencia sobre gamificación aplicada a organizaciones y liderazgo.',
+    link: 'https://www.youtube.com/watch?v=knlE5kA9kAg',
+    linkLabel: 'Ver charla',
+    galeria: ['/imagenes/charlas/charla-gamificacion.png'],
+    videoId: 'knlE5kA9kAg',
+    tags: ['Charla', 'Gamificación'],
+  },
+  {
+    id: 'charla-juego',
+    titulo: 'Cómo crear tu propio juego',
+    categoria: 'Charlas',
+    periodo: '2024',
+    descripcion: 'Workshop sobre diseño de juegos de mesa y mecánicas lúdicas.',
+    link: 'https://www.youtube.com/watch?v=WYMzLM9NFRE',
+    linkLabel: 'Ver charla',
+    galeria: ['/imagenes/charlas/charla-juego.png'],
+    videoId: 'WYMzLM9NFRE',
+    tags: ['Game design', 'Workshop'],
+  },
+].map((p) => ({ ...p, imagen: p.galeria && p.galeria.length ? p.galeria[0] : null }));
+
+const logos = [
+  { nombre: 'La Nación', texto: 'LA NACIÓN' },
+  { nombre: 'Ohlalá!', texto: 'OHLALÁ!' },
+  { nombre: 'Bonvivir', texto: 'BONVIVIR' },
+  { nombre: 'Rolling Stone Mx', texto: 'ROLLING STONE MX' },
+  { nombre: 'Argentina Game Show', texto: 'AGS' },
+  { nombre: 'Comicón', texto: 'COMICÓN' },
+  { nombre: 'Luna Park', texto: 'LUNA PARK' },
+  { nombre: 'IEFA LATAM', texto: 'IEFA' },
+  { nombre: 'Pedidos Ya', texto: 'PEDIDOSYA' },
+  { nombre: 'EFES', texto: 'EFES' },
+];
+
+const categoriaColores: Record<string, string> = {
+  'Streaming': '#a8ff00',
+  'Eventos': '#00d4ff',
+  'Juegos': '#ff6b35',
+  'Gamificación': '#c87dff',
+  'Cortometraje': '#ffcc00',
+  'Charlas': '#ff4f8b',
+};
+---
+<Layout>
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4" style="background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);">
+    <span class="font-bold text-sm tracking-widest" style="font-family:'Space Grotesk',sans-serif; color: var(--color-lime);">GASTY.GD</span>
+    <div class="flex gap-6 text-sm" style="color: var(--color-muted);">
+      <a href="#quien-soy" class="hover:text-white transition-colors">Sobre mí</a>
+      <a href="#proyectos" class="hover:text-white transition-colors hidden sm:inline">Proyectos</a>
+      <a href="#contacto" class="hover:text-white transition-colors">Contacto</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex flex-col justify-center px-6 pt-24 pb-16 overflow-hidden" style="background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(168,255,0,0.06) 0%, transparent 70%), var(--color-bg);">
+    <!-- bg grid -->
+    <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+    <div class="relative max-w-5xl mx-auto w-full">
+      <p class="section-label mb-6">Streaming · Diseño de Juegos · Licenciado en Actuación</p>
+      <h1 class="text-6xl sm:text-8xl lg:text-[10rem] font-black leading-none tracking-tighter mb-8" style="font-family:'Space Grotesk',sans-serif;">
+        GASTY<br/>
+        <span style="color: var(--color-lime);">JEANDET</span>
+      </h1>
+      <p class="text-xl sm:text-2xl max-w-xl mb-12" style="color: var(--color-muted); line-height: 1.5;">
+        Diseñar experiencias para que la gente <span style="color: var(--color-text);">se quede mirando.</span>
+      </p>
+      <a
+        href="#proyectos"
+        class="inline-flex items-center gap-3 px-8 py-4 font-bold text-sm tracking-wider transition-all duration-300 hover:gap-5"
+        style="background: var(--color-lime); color: #000; font-family:'Space Grotesk',sans-serif; border-radius: 2px;"
+      >
+        Conocé lo que hago <span>↓</span>
+      </a>
+    </div>
+
+    <!-- Foto hero -->
+    <div class="absolute right-0 bottom-0 top-0 w-1/3 hidden lg:block pointer-events-none">
+      <img
+        src="/imagenes/perfil-gasty/IMG_20190619_144141_184.jpg"
+        alt="Gasty Jeandet"
+        class="absolute bottom-0 right-0 h-full w-full object-cover object-top"
+        style="mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.8) 30%, black 60%); -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.8) 30%, black 60%);"
+        loading="eager"
+      />
+      <div class="absolute inset-0" style="background: linear-gradient(to right, var(--color-bg) 0%, transparent 40%);"></div>
+    </div>
+  </section>
+
+  <!-- QUIÉN SOY -->
+  <section id="quien-soy" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="section-label mb-4">Sobre mí</p>
+        <h2 class="text-4xl sm:text-5xl mb-8" style="font-family:'Space Grotesk',sans-serif;">Construyamos<br/>experiencias en vivo.</h2>
+        <div class="space-y-4 text-lg" style="color: var(--color-muted); line-height: 1.7;">
+          <p>
+            Soy director de streaming, diseñador de juegos, actor y facilitador. Trabajo en el cruce entre tecnología, creatividad y experiencia de usuario: ese lugar donde algo que se ve en pantalla o se juega en una mesa deja de ser un producto y se convierte en un momento que la gente recuerda.
+          </p>
+          <p>
+            Dirigí streamings para <strong style="color: var(--color-text);">Ohlalá!</strong>, <strong style="color: var(--color-text);">Bonvivir</strong> y <strong style="color: var(--color-text);">Rolling Stone México</strong>, y cubrí eventos masivos como el Argentina Game Show, Comicón y Luna Park. Diseñé <strong style="color: var(--color-text);">WellMess</strong>, un juego de cartas distribuido con la revista Ohlalá!, y facilito programas de gamificación para equipos de liderazgo gastronómico.
+          </p>
+          <p>
+            Vengo del mundo del teatro — del independiente y del comunitario. Ahí aprendí la importancia de construir con otros, de armar red, de multiplicar saberes. Y que el protagonista puede ser el coro.
+          </p>
+        </div>
+      </div>
+      <div class="relative">
+        <img
+          src="/imagenes/perfil-gasty/IMG_6335.jpeg"
+          alt="Gastón Jeandet"
+          class="w-full object-cover"
+          style="aspect-ratio: 4/5; border-radius: 2px; filter: grayscale(20%);"
+          loading="lazy"
+        />
+        <div class="absolute -bottom-4 -left-4 w-full h-full -z-10" style="border: 1px solid var(--color-lime); border-radius: 2px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ HAGO -->
+  <section id="que-hago" class="py-24 px-6" style="background: var(--color-surface);">
+    <div class="max-w-5xl mx-auto">
+      <p class="section-label mb-4">Áreas</p>
+      <h2 class="text-4xl sm:text-5xl mb-16" style="font-family:'Space Grotesk',sans-serif;">Qué hago</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          {
+            icono: '📡',
+            titulo: 'Streaming',
+            descripcion: 'Dirección técnica y artística de programas regulares y eventos masivos en vivo. Setup multicámara, coordinación de equipos, producción en tiempo real.',
+            ejemplos: ['Ohlalá! (La Nación)', 'Bonvivir', 'Rolling Stone Mx', 'AGS · Comicón · Luna Park'],
+          },
+          {
+            icono: '🎲',
+            titulo: 'Gamificación y Juegos',
+            descripcion: 'Diseño de juegos de mesa, gamificación de procesos organizacionales, facilitación de talleres de liderazgo. Capacitación en IA y herramientas digitales.',
+            ejemplos: ['WellMess (juego de cartas)', 'EFES Management Group', 'Elementales (en dev)', 'Hackatones IA'],
+          },
+          {
+            icono: '🎬',
+            titulo: 'Audiovisual y Teatro',
+            descripcion: 'Dirección de fotografía en cine, actuación, producción de cortometrajes. Teatro comunitario de largo aliento con Los Pompapetriyasos.',
+            ejemplos: ['AlguiEN', 'Tía Antonia puede volar', 'Las Rivero', 'Los Pompapetriyasos'],
+          },
+        ].map((area) => (
+          <div class="p-8 rounded-sm" style="background: var(--color-surface-2); border: 1px solid var(--color-border);">
+            <div class="text-4xl mb-6">{area.icono}</div>
+            <h3 class="text-xl mb-4" style="font-family:'Space Grotesk',sans-serif;">{area.titulo}</h3>
+            <p class="text-sm mb-6" style="color: var(--color-muted); line-height: 1.7;">{area.descripcion}</p>
+            <ul class="space-y-1">
+              {area.ejemplos.map((e) => (
+                <li class="text-xs" style="color: var(--color-lime);">→ {e}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <p class="section-label mb-4">Portfolio</p>
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-16">
+        <h2 class="text-4xl sm:text-5xl" style="font-family:'Space Grotesk',sans-serif;">Proyectos<br/>destacados</h2>
+        <a href="/proyectos" class="text-sm border-b pb-0.5 transition-colors hover:border-lime-400" style="color: var(--color-lime); border-color: var(--color-lime);">
+          Ver todos →
+        </a>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {proyectos.map((p) => (
+          <button
+            class="card-hover text-left w-full"
+            data-proyecto={JSON.stringify(p)}
+            onclick="abrirModal(this)"
+            aria-label={`Ver proyecto ${p.titulo}`}
+          >
+            <div class="overflow-hidden" style="border-radius: 2px; background: var(--color-surface);">
+              <!-- imagen o placeholder -->
+              {p.imagen ? (
+                <div class="relative" style="aspect-ratio: 16/9; overflow: hidden;">
+                  <img
+                    src={p.imagen}
+                    alt={p.titulo}
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);"></div>
+                </div>
+              ) : (
+                <div class="flex items-center justify-center text-5xl" style="aspect-ratio: 16/9; background: var(--color-surface-2);">
+                  {p.categoria === 'Charlas' ? '🎙️' : '🎬'}
+                </div>
+              )}
+              <div class="p-5">
+                <div class="flex items-center gap-2 mb-2">
+                  <span
+                    class="text-xs font-bold px-2 py-0.5"
+                    style={`background: ${categoriaColores[p.categoria] ?? '#888'}22; color: ${categoriaColores[p.categoria] ?? '#888'}; border-radius: 2px;`}
+                  >
+                    {p.categoria}
+                  </span>
+                  <span class="text-xs" style="color: var(--color-muted);">{p.periodo}</span>
+                </div>
+                <h3 class="text-lg mb-1" style="font-family:'Space Grotesk',sans-serif;">{p.titulo}</h3>
+                <p class="text-sm line-clamp-2" style="color: var(--color-muted);">{p.descripcion}</p>
+              </div>
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGOS -->
+  <section class="py-16 px-6 overflow-hidden" style="background: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+    <div class="max-w-5xl mx-auto">
+      <p class="section-label mb-10 text-center">Trabajé con</p>
+      <div class="flex flex-wrap justify-center gap-x-10 gap-y-6">
+        {logos.map((logo) => (
+          <span
+            class="text-sm font-bold tracking-widest transition-all duration-300 hover:text-white cursor-default select-none"
+            style="color: #444; font-family:'Space Grotesk',sans-serif;"
+            title={logo.nombre}
+          >
+            {logo.texto}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-24 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="section-label mb-4">Contacto</p>
+      <h2 class="text-4xl sm:text-6xl mb-6" style="font-family:'Space Grotesk',sans-serif;">
+        ¿Trabajamos<br/><span style="color: var(--color-lime);">juntos?</span>
+      </h2>
+      <p class="text-lg mb-12" style="color: var(--color-muted);">Escribime y lo vemos.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <a
+          href="mailto:jeandet.gaston@gmail.com"
+          class="flex items-center gap-3 px-8 py-4 font-bold text-sm tracking-wider transition-all duration-300 hover:opacity-90"
+          style="background: var(--color-lime); color: #000; font-family:'Space Grotesk',sans-serif; border-radius: 2px; min-width: 220px; justify-content: center;"
+        >
+          ✉ ESCRIBIME
+        </a>
+        <a
+          href="https://instagram.com/gasty.gd"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center gap-3 px-8 py-4 font-bold text-sm tracking-wider transition-all duration-300 hover:border-white"
+          style="border: 1px solid var(--color-border); color: var(--color-text); font-family:'Space Grotesk',sans-serif; border-radius: 2px; min-width: 220px; justify-content: center;"
+        >
+          IG @gasty.gd
+        </a>
+        <a
+          href="https://linkedin.com/in/gastonjeandet"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center gap-3 px-8 py-4 font-bold text-sm tracking-wider transition-all duration-300 hover:border-white"
+          style="border: 1px solid var(--color-border); color: var(--color-text); font-family:'Space Grotesk',sans-serif; border-radius: 2px; min-width: 220px; justify-content: center;"
+        >
+          LinkedIn
+        </a>
+        <a
+          href="/cv-gasty-jeandet.pdf"
+          download
+          class="flex items-center gap-3 px-8 py-4 font-bold text-sm tracking-wider transition-all duration-300 hover:border-white"
+          style="border: 1px solid var(--color-border); color: var(--color-text); font-family:'Space Grotesk',sans-serif; border-radius: 2px; min-width: 220px; justify-content: center;"
+        >
+          ↓ DESCARGAR CV
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 px-6 text-center text-xs" style="color: var(--color-muted); border-top: 1px solid var(--color-border);">
+    <p>© {new Date().getFullYear()} Gastón Jeandet — Buenos Aires, Argentina</p>
+  </footer>
+
+  <!-- MODAL -->
+  <div
+    id="modal-overlay"
+    class="fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 pointer-events-none"
+    style="background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);"
+    onclick="cerrarModal(event)"
+  >
+    <div
+      id="modal-content"
+      class="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+      style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 2px;"
+    >
+      <button
+        onclick="cerrarModalBtn()"
+        class="absolute top-4 right-4 z-10 text-2xl leading-none transition-colors hover:text-white"
+        style="color: var(--color-muted);"
+        aria-label="Cerrar"
+      >×</button>
+      <div id="modal-body" class="p-8"></div>
+    </div>
+  </div>
+</Layout>
+
+<script is:inline>
+  function abrirModal(btn) {
+    const data = JSON.parse(btn.dataset.proyecto);
+    const overlay = document.getElementById('modal-overlay');
+    const body = document.getElementById('modal-body');
+
+    const categoriaColores = {
+      Streaming: '#a8ff00',
+      Eventos: '#00d4ff',
+      Juegos: '#ff6b35',
+      Gamificación: '#c87dff',
+      Cortometraje: '#ffcc00',
+      Charlas: '#ff4f8b',
+    };
+    const color = categoriaColores[data.categoria] || '#888';
+
+    let mediaHtml = '';
+    if (data.videoId) {
+      mediaHtml += `<div style="aspect-ratio:16/9;margin-bottom:1rem;border-radius:2px;overflow:hidden;">
+        <iframe
+          src="https://www.youtube.com/embed/${data.videoId}"
+          frameborder="0"
+          allowfullscreen
+          style="width:100%;height:100%;border:0;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        ></iframe>
+      </div>`;
+    }
+
+    const galeria = (data.galeria || []).filter(Boolean);
+    if (galeria.length) {
+      // estado global del carrusel
+      window.__carrusel = { imgs: galeria, idx: 0 };
+      const flechas = galeria.length > 1;
+      const dots = galeria.map((_, i) =>
+        `<button onclick="carGo(${i})" aria-label="Imagen ${i + 1}" class="car-dot" data-i="${i}" style="width:8px;height:8px;border-radius:50%;border:0;padding:0;cursor:pointer;background:${i === 0 ? color : '#444'};transition:background .2s;"></button>`
+      ).join('');
+      mediaHtml += `
+        <div style="position:relative;margin-bottom:1.5rem;">
+          <div style="aspect-ratio:16/9;border-radius:2px;overflow:hidden;background:#000;">
+            <img id="car-img" src="${galeria[0]}" alt="${data.titulo}" style="width:100%;height:100%;object-fit:contain;background:#000;"/>
+          </div>
+          ${flechas ? `
+            <button onclick="carIr(-1)" aria-label="Anterior" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);width:40px;height:40px;border:0;border-radius:50%;background:rgba(0,0,0,0.6);color:#fff;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);">‹</button>
+            <button onclick="carIr(1)" aria-label="Siguiente" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);width:40px;height:40px;border:0;border-radius:50%;background:rgba(0,0,0,0.6);color:#fff;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);">›</button>
+            <div style="position:absolute;top:8px;right:10px;font-size:0.7rem;font-weight:700;padding:2px 8px;background:rgba(0,0,0,0.6);color:#fff;border-radius:99px;backdrop-filter:blur(4px);"><span id="car-num">1</span>/${galeria.length}</div>
+          ` : ''}
+          ${flechas ? `<div style="display:flex;gap:6px;justify-content:center;margin-top:10px;">${dots}</div>` : ''}
+        </div>`;
+    } else {
+      window.__carrusel = null;
+    }
+
+    let tagsHtml = (data.tags || []).map(t =>
+      `<span style="font-size:0.7rem;font-weight:700;padding:2px 8px;background:${color}22;color:${color};border-radius:2px;">${t}</span>`
+    ).join('');
+
+    let linkHtml = data.link
+      ? `<a href="${data.link}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:var(--color-lime);color:#000;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:0.1em;border-radius:2px;margin-top:1.5rem;text-decoration:none;">
+          ${data.linkLabel} ↗
+        </a>`
+      : '';
+
+    body.innerHTML = `
+      ${mediaHtml}
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:0.75rem;flex-wrap:wrap;">${tagsHtml}</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:1.75rem;font-weight:700;margin-bottom:0.5rem;">${data.titulo}</h2>
+      <p style="font-size:0.8rem;color:var(--color-muted);margin-bottom:1rem;">${data.periodo}</p>
+      <p style="color:#ccc;line-height:1.7;">${data.descripcion}</p>
+      ${linkHtml}
+    `;
+
+    overlay.classList.remove('pointer-events-none');
+    overlay.style.opacity = '1';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function carRender() {
+    const c = window.__carrusel;
+    if (!c) return;
+    const img = document.getElementById('car-img');
+    if (img) img.src = c.imgs[c.idx];
+    const num = document.getElementById('car-num');
+    if (num) num.textContent = (c.idx + 1);
+    document.querySelectorAll('.car-dot').forEach((d) => {
+      d.style.background = (Number(d.dataset.i) === c.idx) ? '#a8ff00' : '#444';
+    });
+  }
+
+  function carIr(delta) {
+    const c = window.__carrusel;
+    if (!c) return;
+    c.idx = (c.idx + delta + c.imgs.length) % c.imgs.length;
+    carRender();
+  }
+
+  function carGo(i) {
+    const c = window.__carrusel;
+    if (!c) return;
+    c.idx = i;
+    carRender();
+  }
+
+  function cerrarModal(e) {
+    if (e.target.id === 'modal-overlay') cerrarModalBtn();
+  }
+
+  function cerrarModalBtn() {
+    const overlay = document.getElementById('modal-overlay');
+    const body = document.getElementById('modal-body');
+    overlay.style.opacity = '0';
+    setTimeout(() => {
+      overlay.classList.add('pointer-events-none');
+      body.innerHTML = '';
+    }, 250);
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', (e) => {
+    const abierto = document.getElementById('modal-overlay').style.opacity === '1';
+    if (e.key === 'Escape') cerrarModalBtn();
+    if (abierto && window.__carrusel) {
+      if (e.key === 'ArrowLeft') carIr(-1);
+      if (e.key === 'ArrowRight') carIr(1);
+    }
+  });
+
+  // Fade-up on scroll
+  const observer = new IntersectionObserver(
+    (entries) => entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('animate-fade-up');
+        observer.unobserve(el.target);
+      }
+    }),
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('section > div').forEach(el => observer.observe(el));
+</script>
